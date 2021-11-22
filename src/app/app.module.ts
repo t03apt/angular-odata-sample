@@ -6,20 +6,25 @@ import { AppComponent } from './app.component';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GridModule } from '@progress/kendo-angular-grid';
+import { ProductsBindingDirective } from './remote-binding.directive';
+import { ProductsService } from './northwind.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductsBindingDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DropDownsModule,
     BrowserAnimationsModule,
-    GridModule
+    GridModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
